@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bootcamp-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: bootcamp-app
+  template:
+    metadata:
+      labels:
+        app: bootcamp-app
+    spec:
+      containers:
+        - name: bootcamp-app
+          image: TU_USUARIO_DOCKER/bootcamp-app:1.0
+          ports:
+            - containerPort: 5000
